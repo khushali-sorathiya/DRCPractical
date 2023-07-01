@@ -1,31 +1,299 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_12" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fB8-v4-hf0">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Inter-Bold.ttf">
+            <string>Inter-Bold</string>
+        </array>
+        <array key="Inter-Regular.ttf">
+            <string>Inter-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--LoginVC-->
+        <scene sceneID="u09-qo-vyx">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DRCPractical" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                <viewController storyboardIdentifier="LoginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fB8-v4-hf0" customClass="LoginVC" customModule="DRCPractical" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wBQ-VO-jLi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Dx-7t-zo8">
+                                <rect key="frame" x="0.0" y="20" width="414" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="hze-XW-C2O"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="et5-eR-5Yz">
+                                <rect key="frame" x="10" y="114" width="394" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Back" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0YX-wP-eOO">
+                                        <rect key="frame" x="0.0" y="0.0" width="394" height="28.666666666666668"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Hear" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="twT-hA-qjM">
+                                        <rect key="frame" x="0.0" y="50.666666666666657" width="394" height="19.333333333333329"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="K8F-gQ-Mes">
+                                <rect key="frame" x="10" y="214" width="404" height="112"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-V5-YSJ" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="404" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="cIk-Ny-ksi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="fB8-v4-hf0" id="v7M-6g-mfV"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wJa-AO-1P2" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="66" width="404" height="46"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="name"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="delegate" destination="fB8-v4-hf0" id="3lU-si-NHu"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5D-qR-kSR" customClass="MainButton" customModule="cnp1717_ios" customModuleProvider="target">
+                                <rect key="frame" x="32" y="363" width="350" height="71"/>
+                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="71" id="Ogv-7O-5ze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <color key="tintColor" name="white"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLoginAction:" destination="fB8-v4-hf0" eventType="touchUpInside" id="6ok-G2-fhu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="rRc-iT-wL8"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="i5D-qR-kSR" firstAttribute="leading" secondItem="rRc-iT-wL8" secondAttribute="leading" constant="32" id="0L4-ty-qTY"/>
+                            <constraint firstItem="rRc-iT-wL8" firstAttribute="trailing" secondItem="et5-eR-5Yz" secondAttribute="trailing" constant="10" id="2Ls-Fq-oc5"/>
+                            <constraint firstItem="K8F-gQ-Mes" firstAttribute="top" secondItem="et5-eR-5Yz" secondAttribute="bottom" constant="30" id="E69-w9-VAR"/>
+                            <constraint firstItem="5Dx-7t-zo8" firstAttribute="leading" secondItem="rRc-iT-wL8" secondAttribute="leading" id="Q5I-8f-c13"/>
+                            <constraint firstItem="5Dx-7t-zo8" firstAttribute="trailing" secondItem="rRc-iT-wL8" secondAttribute="trailing" id="T7r-mo-ZHK"/>
+                            <constraint firstItem="rRc-iT-wL8" firstAttribute="trailing" secondItem="K8F-gQ-Mes" secondAttribute="trailing" id="UNB-wk-JSY"/>
+                            <constraint firstItem="5Dx-7t-zo8" firstAttribute="top" secondItem="rRc-iT-wL8" secondAttribute="top" id="aaz-hR-Awf"/>
+                            <constraint firstItem="i5D-qR-kSR" firstAttribute="top" secondItem="K8F-gQ-Mes" secondAttribute="bottom" constant="37" id="tdn-JR-HuA"/>
+                            <constraint firstItem="et5-eR-5Yz" firstAttribute="leading" secondItem="rRc-iT-wL8" secondAttribute="leading" constant="10" id="vf6-wR-krA"/>
+                            <constraint firstItem="rRc-iT-wL8" firstAttribute="trailing" secondItem="i5D-qR-kSR" secondAttribute="trailing" constant="32" id="wOW-Ib-FMC"/>
+                            <constraint firstItem="et5-eR-5Yz" firstAttribute="top" secondItem="5Dx-7t-zo8" secondAttribute="bottom" constant="30" id="wZL-LL-Uzc"/>
+                            <constraint firstItem="K8F-gQ-Mes" firstAttribute="leading" secondItem="rRc-iT-wL8" secondAttribute="leading" constant="10" id="yTB-SX-fnM"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnLogin" destination="i5D-qR-kSR" id="oOC-Lv-Qjw"/>
+                        <outlet property="lblSubTitle" destination="twT-hA-qjM" id="a4W-IV-32c"/>
+                        <outlet property="lblTitle" destination="0YX-wP-eOO" id="rXH-3d-nBw"/>
+                        <outlet property="txtEmail" destination="G2u-V5-YSJ" id="plg-BH-Vkh"/>
+                        <outlet property="txtPassword" destination="wJa-AO-1P2" id="2rt-lN-KAZ"/>
+                        <outlet property="viewHeader" destination="5Dx-7t-zo8" id="bA0-Ox-O7n"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cUm-6p-xRL" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="46.564885496183201" y="-2.1126760563380285"/>
+            <point key="canvasLocation" x="954" y="-14"/>
+        </scene>
+        <!--SignupVC-->
+        <scene sceneID="90c-U4-pbt">
+            <objects>
+                <viewController storyboardIdentifier="SignupVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9Xf-8V-ui7" customClass="SignupVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wia-Xl-kzw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O5c-f6-vLv">
+                                <rect key="frame" x="0.0" y="20" width="414" height="64"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="X6Q-5s-z0g"/>
+                                </constraints>
+                            </view>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="coV-v2-Yhn">
+                                <rect key="frame" x="0.0" y="84" width="414" height="652"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gdt-ab-1Yc">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="507.33333333333331"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="bV7-mk-1z6">
+                                                <rect key="frame" x="10" y="30" width="394" height="29.333333333333329"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register your Profile" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IId-W2-3qn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="394" height="29.333333333333332"/>
+                                                        <fontDescription key="fontDescription" name="Inter-Bold" family="Inter" pointSize="24"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YR9-B2-jnb">
+                                                <rect key="frame" x="10" y="89.333333333333343" width="404" height="310"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gZS-z2-bAU" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="404" height="46"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="46" id="ZGn-9j-1je"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9Xf-8V-ui7" id="g6u-3P-EGX"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="QKq-Qw-jj5" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="66" width="404" height="46"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9Xf-8V-ui7" id="rJ6-2M-vJW"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Contact number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="wyT-iA-wfL" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="131.99999999999997" width="404" height="46"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="next" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9Xf-8V-ui7" id="YHv-L0-f3v"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A1I-4P-70U" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="197.99999999999997" width="404" height="46"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9Xf-8V-ui7" id="Qjq-5M-B46"/>
+                                                        </connections>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Repeat Password" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Efi-bD-aLq" customClass="TextField" customModule="cnp1717_ios" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="264" width="404" height="46"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next" secureTextEntry="YES" textContentType="name"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isRequriedFiled" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="9Xf-8V-ui7" id="HwJ-TW-o3i"/>
+                                                        </connections>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPa-kC-wjl" customClass="MainButton" customModule="cnp1717_ios" customModuleProvider="target">
+                                                <rect key="frame" x="32" y="419.33333333333331" width="350" height="71"/>
+                                                <color key="backgroundColor" name="PrimaryBlue"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="71" id="GTI-XX-6Sc"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Inter-Regular" family="Inter" pointSize="16"/>
+                                                <color key="tintColor" name="white"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Register"/>
+                                                <connections>
+                                                    <action selector="btnSendAction:" destination="9Xf-8V-ui7" eventType="touchUpInside" id="77v-xj-u2h"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="XPa-kC-wjl" firstAttribute="leading" secondItem="gdt-ab-1Yc" secondAttribute="leading" constant="32" id="051-Kt-Pef"/>
+                                            <constraint firstItem="bV7-mk-1z6" firstAttribute="top" secondItem="gdt-ab-1Yc" secondAttribute="top" constant="30" id="26c-ol-5A2"/>
+                                            <constraint firstAttribute="bottom" secondItem="XPa-kC-wjl" secondAttribute="bottom" constant="17" id="43P-ap-DTz"/>
+                                            <constraint firstAttribute="trailing" secondItem="bV7-mk-1z6" secondAttribute="trailing" constant="10" id="A55-k9-2Gf"/>
+                                            <constraint firstItem="bV7-mk-1z6" firstAttribute="leading" secondItem="gdt-ab-1Yc" secondAttribute="leading" constant="10" id="L8b-u8-hFc"/>
+                                            <constraint firstItem="XPa-kC-wjl" firstAttribute="top" secondItem="YR9-B2-jnb" secondAttribute="bottom" constant="20" id="SB2-vW-yDF"/>
+                                            <constraint firstItem="YR9-B2-jnb" firstAttribute="leading" secondItem="gdt-ab-1Yc" secondAttribute="leading" constant="10" id="SVH-IE-rDd"/>
+                                            <constraint firstAttribute="trailing" secondItem="XPa-kC-wjl" secondAttribute="trailing" constant="32" id="m1k-Em-7Za"/>
+                                            <constraint firstAttribute="trailing" secondItem="YR9-B2-jnb" secondAttribute="trailing" id="nts-as-Z1H"/>
+                                            <constraint firstItem="YR9-B2-jnb" firstAttribute="top" secondItem="bV7-mk-1z6" secondAttribute="bottom" constant="30" id="pPJ-d5-JMV"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gdt-ab-1Yc" secondAttribute="bottom" id="5ha-Xb-cSE"/>
+                                    <constraint firstAttribute="trailing" secondItem="gdt-ab-1Yc" secondAttribute="trailing" id="dgy-XH-hpM"/>
+                                    <constraint firstItem="gdt-ab-1Yc" firstAttribute="width" secondItem="coV-v2-Yhn" secondAttribute="width" id="lmu-tb-Nv3"/>
+                                    <constraint firstItem="gdt-ab-1Yc" firstAttribute="top" secondItem="coV-v2-Yhn" secondAttribute="top" id="r6m-Tu-hzC"/>
+                                    <constraint firstItem="gdt-ab-1Yc" firstAttribute="leading" secondItem="coV-v2-Yhn" secondAttribute="leading" id="uP4-zU-god"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="IMV-kN-Xx3"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IMV-kN-Xx3" firstAttribute="trailing" secondItem="coV-v2-Yhn" secondAttribute="trailing" id="6A5-2a-Joh"/>
+                            <constraint firstItem="O5c-f6-vLv" firstAttribute="leading" secondItem="IMV-kN-Xx3" secondAttribute="leading" id="7kg-BX-DzZ"/>
+                            <constraint firstItem="O5c-f6-vLv" firstAttribute="trailing" secondItem="IMV-kN-Xx3" secondAttribute="trailing" id="P5j-ga-N4m"/>
+                            <constraint firstItem="coV-v2-Yhn" firstAttribute="top" secondItem="O5c-f6-vLv" secondAttribute="bottom" id="VFL-3k-otc"/>
+                            <constraint firstItem="O5c-f6-vLv" firstAttribute="top" secondItem="IMV-kN-Xx3" secondAttribute="top" id="rc2-Gj-zcd"/>
+                            <constraint firstItem="IMV-kN-Xx3" firstAttribute="bottom" secondItem="coV-v2-Yhn" secondAttribute="bottom" id="u8H-7Y-XVW"/>
+                            <constraint firstItem="coV-v2-Yhn" firstAttribute="leading" secondItem="IMV-kN-Xx3" secondAttribute="leading" id="z9L-QB-F1C"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="btnSend" destination="XPa-kC-wjl" id="eEe-X1-DqX"/>
+                        <outlet property="lblTitle" destination="IId-W2-3qn" id="TgH-XO-b59"/>
+                        <outlet property="txtContact" destination="wyT-iA-wfL" id="F9N-Ri-Bgp"/>
+                        <outlet property="txtEmail" destination="QKq-Qw-jj5" id="TQX-Fe-1Mi"/>
+                        <outlet property="txtName" destination="gZS-z2-bAU" id="QLv-eZ-WCc"/>
+                        <outlet property="txtPassword" destination="A1I-4P-70U" id="UNA-K5-1pg"/>
+                        <outlet property="txtRepeatPassword" destination="Efi-bD-aLq" id="v7S-Rf-FG2"/>
+                        <outlet property="viewHeader" destination="O5c-f6-vLv" id="Xf0-4p-fB3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EdU-dK-vd2" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="-15"/>
         </scene>
     </scenes>
     <resources>
+        <namedColor name="PrimaryBlue">
+            <color red="0.078431372549019607" green="0.2196078431372549" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

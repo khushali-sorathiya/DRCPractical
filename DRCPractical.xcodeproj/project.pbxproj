@@ -22,6 +22,8 @@
 		B4F71C482A4FCF2C0011D634 /* Color+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C472A4FCF2C0011D634 /* Color+Font.swift */; };
 		B4F71C4A2A4FCF5A0011D634 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C492A4FCF5A0011D634 /* CustomControl.swift */; };
 		B4F71C4D2A4FCFE60011D634 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C4C2A4FCFE60011D634 /* Extensions.swift */; };
+		B4F71C512A4FD5E10011D634 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C502A4FD5E10011D634 /* LoginVC.swift */; };
+		B4F71C532A4FD79F0011D634 /* SignupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C522A4FD79F0011D634 /* SignupVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		B4F71C472A4FCF2C0011D634 /* Color+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Font.swift"; sourceTree = "<group>"; };
 		B4F71C492A4FCF5A0011D634 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
 		B4F71C4C2A4FCFE60011D634 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		B4F71C502A4FD5E10011D634 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		B4F71C522A4FD79F0011D634 /* SignupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		B4F71C232A4FC9960011D634 /* DRCPractical */ = {
 			isa = PBXGroup;
 			children = (
+				B4F71C4E2A4FD5C20011D634 /* ViewControllers */,
 				B4F71C242A4FC9960011D634 /* AppDelegate.swift */,
 				B4F71C262A4FC9960011D634 /* SceneDelegate.swift */,
 				B4F71C282A4FC9960011D634 /* ViewController.swift */,
@@ -100,6 +105,23 @@
 				B4F71C4C2A4FCFE60011D634 /* Extensions.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		B4F71C4E2A4FD5C20011D634 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4F71C4F2A4FD5D00011D634 /* Authantication */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4F71C4F2A4FD5D00011D634 /* Authantication */ = {
+			isa = PBXGroup;
+			children = (
+				B4F71C502A4FD5E10011D634 /* LoginVC.swift */,
+				B4F71C522A4FD79F0011D634 /* SignupVC.swift */,
+			);
+			path = Authantication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +197,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F71C532A4FD79F0011D634 /* SignupVC.swift in Sources */,
+				B4F71C512A4FD5E10011D634 /* LoginVC.swift in Sources */,
 				B4F71C3E2A4FCD5C0011D634 /* StatusBarView.swift in Sources */,
 				B4F71C4A2A4FCF5A0011D634 /* CustomControl.swift in Sources */,
 				B4F71C292A4FC9960011D634 /* ViewController.swift in Sources */,

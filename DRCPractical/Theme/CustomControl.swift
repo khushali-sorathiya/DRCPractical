@@ -85,3 +85,7 @@ class MainButton: UIButton {
     
 }
 
+
+struct StoryBoard {
+    static let main = UIStoryboard(name: "Main", bundle: nil)
+}
