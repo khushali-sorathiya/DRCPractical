@@ -2,7 +2,7 @@
 //  SignupVC.swift
 //  DRCPractical
 //
-//  Created by Akash Chaudhary on 01/07/23.
+//  Created by Khushali on 01/07/23.
 //
 
 import UIKit
@@ -174,6 +174,7 @@ class SignupVC: UIViewController {
                    let id = user.value(forKey: "id") as? Int {
                     print("Name: \(name), ID: \(id)")
                     UserDefaults.standard.set(id, forKey: "user_id")
+                    UserDefaults.standard.set(name, forKey: "user_name")
                     UserDefaults.standard.synchronize()
                 }
             }

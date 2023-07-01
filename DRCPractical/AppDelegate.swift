@@ -11,10 +11,36 @@ import CoreData
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
+    var rootNavigation: UINavigationController?{
+        return self.window?.rootViewController as? UINavigationController
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        rootNavigation?.setNavigationBarHidden(true, animated: false)
+        
+        let userId = UserDefaults.standard.object(forKey: "user_id") as? Int ?? 0
+        print("your user id is :", userId)
+        if userId > 0 {
+            
+            let objVC = HomeVC.storyboardInstance
+            let objNavVC = UINavigationController(rootViewController: objVC)
+            objNavVC.interactivePopGestureRecognizer?.isEnabled = false
+            self.window?.rootViewController = objNavVC
+            self.window?.makeKeyAndVisible()
+            
+            //rootNavigation?.pushViewController(HomeVC.storyboardInstance, animated: false)
+        }else {
+            let objVC = LoginVC.storyboardInstance
+            let objNavVC = UINavigationController(rootViewController: objVC)
+            objNavVC.interactivePopGestureRecognizer?.isEnabled = false
+            self.window?.rootViewController = objNavVC
+            self.window?.makeKeyAndVisible()
+           // rootNavigation?.pushViewController(LoginVC.storyboardInstance, animated: false)
+        }
+        
         return true
     }
 

@@ -2,7 +2,7 @@
 //  LoginVC.swift
 //  DRCPractical
 //
-//  Created by Akash Chaudhary on 01/07/23.
+//  Created by Khushali on 01/07/23.
 //
 
 import UIKit
@@ -30,6 +30,8 @@ class LoginVC: UIViewController {
         if checkValidation() {
             if checkUserCredentials() {
                 self.setHomeRootViewController()
+            }else {
+                self.showAlert(message: "Your Email or password wrong")
             }
         }
     }
@@ -86,6 +88,7 @@ class LoginVC: UIViewController {
                            let id = user.value(forKey: "id") as? Int {
                             print("Name: \(name), ID: \(id)")
                             UserDefaults.standard.set(id, forKey: "user_id")
+                            UserDefaults.standard.set(name, forKey: "user_name")
                             UserDefaults.standard.synchronize()
                         }
                     }

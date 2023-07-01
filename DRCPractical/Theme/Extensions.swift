@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import AlamofireImage
 
 //MARK: String
 extension String {
@@ -118,65 +119,12 @@ extension UIViewController {
 //MARK: UIView
 extension UIView {
     
-    class func initFromNib<T: UIView>() -> T {
-        return Bundle.init(for: self.classForCoder()).loadNibNamed(String(describing: self), owner: nil, options: nil)?[0] as? T ?? T()
-    }
     
-    class func loadNib<T: UIView>(_ viewType: T.Type) -> T {
-        let className = String(describing: viewType)
-        return Bundle(for: viewType).loadNibNamed(className, owner: nil, options: nil)!.first as! T
-    }
-    
-    class func loadNib() -> Self {
-        return loadNib(self)
-    }
     
     func bringToFront() {
         self.superview?.bringSubviewToFront(self)
     }
   
-    func anchor(centerX:NSLayoutXAxisAnchor?,centerY:NSLayoutYAxisAnchor?){
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        if let centerX = centerX {
-            self.centerXAnchor.constraint(equalTo: centerX).isActive = true
-        }
-        
-        if let centerY = centerY {
-            self.centerYAnchor.constraint(equalTo: centerY).isActive = true
-        }
-    }
-    
-    func anchor(top: NSLayoutYAxisAnchor?, leading: NSLayoutXAxisAnchor?, bottom: NSLayoutYAxisAnchor?, trailing: NSLayoutXAxisAnchor?, padding: UIEdgeInsets = .zero, size: CGSize = .zero) {
-        
-        translatesAutoresizingMaskIntoConstraints = false
-        
-        if let top = top {
-            self.topAnchor.constraint(equalTo: top, constant: padding.top).isActive = true
-        }
-        
-        if let leading = leading {
-            self.leadingAnchor.constraint(equalTo: leading, constant: padding.left).isActive = true
-        }
-        
-        if let bottom = bottom {
-            self.bottomAnchor.constraint(equalTo: bottom, constant: -padding.bottom).isActive = true
-        }
-        
-        if let trailing = trailing {
-            self.trailingAnchor.constraint(equalTo: trailing, constant: -padding.right).isActive = true
-        }
-        
-        if size.width != 0 {
-            self.widthAnchor.constraint(equalToConstant: size.width).isActive = true
-        }
-        
-        if size.height != 0 {
-            self.heightAnchor.constraint(equalToConstant: size.height).isActive = true
-        }
-        
-    }
-    
     
     func addShadow(offset: CGSize, color: UIColor, radius: CGFloat, opacity: Float) {
         layer.masksToBounds = false
@@ -346,3 +294,42 @@ extension UITextField {
 }
 
 
+
+extension UIImageView{
+    func downLoadImage(url: String, placeHolderImage img: UIImage = UIImage(systemName: "photo")!) {
+        if url.isEmpty { /*print("download URL is empty");*/ return }
+        let indicator:UIActivityIndicatorView = {
+            let activityInd = UIActivityIndicatorView(style: .white)
+            activityInd.translatesAutoresizingMaskIntoConstraints = false
+            activityInd.color = .gray
+            activityInd.startAnimating()
+            activityInd.hidesWhenStopped = true
+            return activityInd
+        }()
+        self.addSubview(indicator)
+        indicator.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        indicator.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        self.image = img
+        self.tag = 333
+        if !(url.isEmpty) {
+            if let urlString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let _url = URL(string: urlString){
+                
+                self.af.setImage(withURL: _url, placeholderImage: img, completion: {(response) in
+                    if case .success(let image) = response.result {
+                        //print("image downloaded: \(image)")
+                        self.image = image
+                        self.tag = 0
+                        indicator.stopAnimating()
+                        indicator.removeFromSuperview()
+                    }
+                })
+                
+            }else{
+                self.tag = 0
+                indicator.stopAnimating()
+                indicator.removeFromSuperview()
+            }
+        }
+    }
+    
+}
