@@ -14,6 +14,14 @@
 		B4F71C2F2A4FC9960011D634 /* DRCPractical.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C2D2A4FC9960011D634 /* DRCPractical.xcdatamodeld */; };
 		B4F71C312A4FC9970011D634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4F71C302A4FC9970011D634 /* Assets.xcassets */; };
 		B4F71C342A4FC9970011D634 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4F71C322A4FC9970011D634 /* LaunchScreen.storyboard */; };
+		B4F71C3E2A4FCD5C0011D634 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C3C2A4FCD5C0011D634 /* StatusBarView.swift */; };
+		B4F71C3F2A4FCD5C0011D634 /* StatusBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F71C3D2A4FCD5C0011D634 /* StatusBarView.xib */; };
+		B4F71C432A4FCDFD0011D634 /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C412A4FCDFD0011D634 /* NavigationBarView.swift */; };
+		B4F71C442A4FCDFD0011D634 /* NavigationBarView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4F71C422A4FCDFD0011D634 /* NavigationBarView.xib */; };
+		B4F71C462A4FCE870011D634 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C452A4FCE870011D634 /* BaseViewController.swift */; };
+		B4F71C482A4FCF2C0011D634 /* Color+Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C472A4FCF2C0011D634 /* Color+Font.swift */; };
+		B4F71C4A2A4FCF5A0011D634 /* CustomControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C492A4FCF5A0011D634 /* CustomControl.swift */; };
+		B4F71C4D2A4FCFE60011D634 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F71C4C2A4FCFE60011D634 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +34,14 @@
 		B4F71C302A4FC9970011D634 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B4F71C332A4FC9970011D634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4F71C352A4FC9970011D634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4F71C3C2A4FCD5C0011D634 /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		B4F71C3D2A4FCD5C0011D634 /* StatusBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatusBarView.xib; sourceTree = "<group>"; };
+		B4F71C412A4FCDFD0011D634 /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
+		B4F71C422A4FCDFD0011D634 /* NavigationBarView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NavigationBarView.xib; sourceTree = "<group>"; };
+		B4F71C452A4FCE870011D634 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B4F71C472A4FCF2C0011D634 /* Color+Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Font.swift"; sourceTree = "<group>"; };
+		B4F71C492A4FCF5A0011D634 /* CustomControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomControl.swift; sourceTree = "<group>"; };
+		B4F71C4C2A4FCFE60011D634 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,10 +80,26 @@
 				B4F71C2A2A4FC9960011D634 /* Main.storyboard */,
 				B4F71C302A4FC9970011D634 /* Assets.xcassets */,
 				B4F71C322A4FC9970011D634 /* LaunchScreen.storyboard */,
+				B4F71C3B2A4FCD2E0011D634 /* Theme */,
 				B4F71C352A4FC9970011D634 /* Info.plist */,
 				B4F71C2D2A4FC9960011D634 /* DRCPractical.xcdatamodeld */,
 			);
 			path = DRCPractical;
+			sourceTree = "<group>";
+		};
+		B4F71C3B2A4FCD2E0011D634 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				B4F71C3C2A4FCD5C0011D634 /* StatusBarView.swift */,
+				B4F71C3D2A4FCD5C0011D634 /* StatusBarView.xib */,
+				B4F71C412A4FCDFD0011D634 /* NavigationBarView.swift */,
+				B4F71C422A4FCDFD0011D634 /* NavigationBarView.xib */,
+				B4F71C452A4FCE870011D634 /* BaseViewController.swift */,
+				B4F71C472A4FCF2C0011D634 /* Color+Font.swift */,
+				B4F71C492A4FCF5A0011D634 /* CustomControl.swift */,
+				B4F71C4C2A4FCFE60011D634 /* Extensions.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +163,8 @@
 				B4F71C342A4FC9970011D634 /* LaunchScreen.storyboard in Resources */,
 				B4F71C312A4FC9970011D634 /* Assets.xcassets in Resources */,
 				B4F71C2C2A4FC9960011D634 /* Main.storyboard in Resources */,
+				B4F71C3F2A4FCD5C0011D634 /* StatusBarView.xib in Resources */,
+				B4F71C442A4FCDFD0011D634 /* NavigationBarView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +175,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4F71C3E2A4FCD5C0011D634 /* StatusBarView.swift in Sources */,
+				B4F71C4A2A4FCF5A0011D634 /* CustomControl.swift in Sources */,
 				B4F71C292A4FC9960011D634 /* ViewController.swift in Sources */,
+				B4F71C432A4FCDFD0011D634 /* NavigationBarView.swift in Sources */,
 				B4F71C2F2A4FC9960011D634 /* DRCPractical.xcdatamodeld in Sources */,
+				B4F71C4D2A4FCFE60011D634 /* Extensions.swift in Sources */,
+				B4F71C482A4FCF2C0011D634 /* Color+Font.swift in Sources */,
 				B4F71C252A4FC9960011D634 /* AppDelegate.swift in Sources */,
+				B4F71C462A4FCE870011D634 /* BaseViewController.swift in Sources */,
 				B4F71C272A4FC9960011D634 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

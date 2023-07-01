@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DRCPractical
 //
-//  Created by Akash Chaudhary on 01/07/23.
+//  Created by Khushali on 01/07/23.
 //
 
 import UIKit
