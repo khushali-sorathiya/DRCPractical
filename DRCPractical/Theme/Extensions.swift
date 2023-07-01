@@ -102,6 +102,17 @@ extension UIViewController {
         }
     }
     
+    func setHomeRootViewController() {
+        DispatchQueue.main.async {
+            let objVC = HomeVC.storyboardInstance
+            let objNavVC = UINavigationController(rootViewController: objVC)
+            objNavVC.interactivePopGestureRecognizer?.isEnabled = false
+            objNavVC.navigationBar.isHidden = true
+            self.view.window?.rootViewController = objNavVC
+            self.view.window?.makeKeyAndVisible()
+        }
+    }
+    
 }
 
 //MARK: UIView
@@ -333,4 +344,5 @@ extension UITextField {
         self.rightViewMode = .always
     }
 }
+
 

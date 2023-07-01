@@ -89,3 +89,39 @@ class MainButton: UIButton {
 struct StoryBoard {
     static let main = UIStoryboard(name: "Main", bundle: nil)
 }
+
+
+class userdata {
+    
+    var id : Int
+    var name : String
+    var email :String
+    var contact :String
+    var password : String
+    
+    init(id: Int, name: String, email: String, contact: String, password: String) {
+        self.id = id
+        self.name = name
+        self.email = email
+        self.contact = contact
+        self.password = password
+    }
+}
+
+class productdata {
+    var id : Int
+    var title : String
+    var desc :String
+    var image :String
+    var price : String
+    var rating : [String:Any]
+    
+    init(id: Int, title: String, desc: String, image: String, price: String, rating: [String : Any]) {
+        self.id = id
+        self.title = title
+        self.desc = desc
+        self.image = image
+        self.price = price
+        self.rating = rating
+    }
+}

@@ -17,7 +17,6 @@ class BaseViewController: UIViewController{
     }
     
     var navigationBar: NavigationBarView!
-    var statusBar: StatusBarView!
     var isOnlyStatusBar:Bool = false
     var isNavigationBar:Bool = true
     var isVisibleFav = false
@@ -26,9 +25,6 @@ class BaseViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //SetUp Navigation and Status bar
-        statusBar = StatusBarView.loadNib()
-        self.view.addSubview(self.statusBar)
         navigationBar = NavigationBarView.loadNib()
         self.view.addSubview(self.navigationBar)
         
@@ -64,9 +60,7 @@ class BaseViewController: UIViewController{
         let window = UIApplication.shared.windows.first
         let topPadding = window?.safeAreaInsets.top
         
-        self.statusBar.anchor(top: nil, leading: self.view.safeAreaLayoutGuide.leadingAnchor, bottom:self.view.safeAreaLayoutGuide.topAnchor, trailing: self.view.safeAreaLayoutGuide.trailingAnchor , padding:.zero, size: .init(width: 0, height: topPadding ?? 0))
-        self.statusBar.bringToFront()
-
+       
         self.navigationBar.anchor(top: self.view.safeAreaLayoutGuide.topAnchor, leading: self.view.safeAreaLayoutGuide.leadingAnchor, bottom:nil, trailing: self.view.safeAreaLayoutGuide.trailingAnchor , padding:.zero, size: .init(width: 0, height: UINavigationController.topbarHeight))
         self.navigationBar.bringToFront()
 
@@ -74,7 +68,6 @@ class BaseViewController: UIViewController{
             navigationBar.isHidden = isOnlyStatusBar
         }else{
             navigationBar.isHidden = !isNavigationBar
-            statusBar.isHidden = !isNavigationBar
         }
         
     }
@@ -129,13 +122,6 @@ extension BaseViewController{
         vc.modalPresentationStyle = .overCurrentContext
         vc.modalTransitionStyle = .crossDissolve
         self.present(vc, animated: true, completion: completion)
-    }
-    
-    //MARK: SET ROOT CONTROLLER TO Home SCREEN
-    func setHomeRootViewController() {
-        DispatchQueue.main.async {
-            
-        }
     }
     
 }
